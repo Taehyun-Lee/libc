@@ -296,6 +296,9 @@ cfg_if! {
     } else if #[cfg(target_os = "fuchsia")] {
         mod fuchsia;
         pub use fuchsia::*;
+    } else if #[cfg(target_os = "vxworks")] {
+	    mod vxworks;
+	    pub use vxworks::*;
     } else if #[cfg(unix)] {
         mod unix;
         pub use unix::*;
